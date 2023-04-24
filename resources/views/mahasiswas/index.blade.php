@@ -31,26 +31,26 @@
             <th>No</th>
             <th>Nim</th>
             <th>Nama</th>
-            <th>Email</th>
+{{--            <th>Email</th>--}}
             <th>Kelas</th>
             <th>Jurusan</th>
-            <th>No_Handphone</th>
-            <th>Tanggal Lahir</th>
+{{--            <th>No_Handphone</th>--}}
+{{--            <th>Tanggal Lahir</th>--}}
             <th width="280px">Action</th>
         </tr>
         @php
             $i=1;
         @endphp
-        @foreach ($mahasiswas as $mahasiswa)
+        @foreach ($paginate as $mahasiswa)
             <tr>
                 <td>{{ $i++}}</td>
                 <td>{{ $mahasiswa->Nim }}</td>
                 <td>{{ $mahasiswa->Nama }}</td>
-                <td>{{ $mahasiswa->Email }}</td>
-                <td>{{ $mahasiswa->Kelas }}</td>
+{{--                <td>{{ $mahasiswa->Email }}</td>--}}
+                <td>{{ $mahasiswa->Kelas->nama_kelas }}</td>
                 <td>{{ $mahasiswa->Jurusan }}</td>
-                <td>{{ $mahasiswa->No_Handphone }}</td>
-                <td>{{ $mahasiswa->tanggal_lahir }}</td>
+{{--                <td>{{ $mahasiswa->No_Handphone }}</td>--}}
+{{--                <td>{{ $mahasiswa->tanggal_lahir }}</td>--}}
                 <td>
                     <form action="{{ route('mahasiswa.destroy',$mahasiswa->Nim) }}" method="POST">
 
@@ -66,11 +66,11 @@
     </table>
     <div class="row">
         <div class="col-md-12">
-            {{$mahasiswas->links('vendor.pagination.bootstrap-4') }}
+            {{$paginate->links('vendor.pagination.bootstrap-4') }}
         </div>
         <div class="d-flex justify-content-between">
-            <p>Showing {{ $mahasiswas->firstItem() }} to {{ $mahasiswas->lastItem() }} of {{ $mahasiswas->total() }} items</p>
-            <p>Page {{ $mahasiswas->currentPage() }} of {{ $mahasiswas->lastPage() }}</p>
+            <p>Showing {{ $paginate->firstItem() }} to {{ $paginate->lastItem() }} of {{ $paginate->total() }} items</p>
+            <p>Page {{ $paginate->currentPage() }} of {{ $paginate->lastPage() }}</p>
         </div>
     </div>
 

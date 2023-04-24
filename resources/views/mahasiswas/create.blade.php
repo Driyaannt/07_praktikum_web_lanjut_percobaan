@@ -29,29 +29,34 @@
                         </div>
                         <div class="form-group">
                             <label for="Nama">Nama</label>
-                            <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
+                            <input type="text" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
                         </div>
-                         <div class="form-group">
-                            <label for="Email">Email</label>
-                            <input type="Email" name="Email" class="form-control" id="Email" aria-describedby="email" >
-                         </div>
+{{--                         <div class="form-group">--}}
+{{--                            <label for="Email">Email</label>--}}
+{{--                            <input type="Email" name="Email" class="form-control" id="Email" aria-describedby="email" >--}}
+{{--                         </div>--}}
                         <div class="form-group">
                             <label for="Kelas">Kelas</label>
-                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="password" >
+                            <select class="form-control" name="Kelas">
+                            @foreach($kelas as $kls)
+                                <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
+                            @endforeach
+                            </select>
+{{--                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="password" >--}}
                         </div>
-                        <div class="form-group">
-                            <label for="TanggalLahir">Tanggal Lahir</label>
-                            <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" aria-describedby="Tanggal Lahir" >
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="TanggalLahir">Tanggal Lahir</label>--}}
+{{--                            <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" aria-describedby="Tanggal Lahir" >--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="Jurusan">Jurusan</label>
-                            <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" aria-describedby="Jurusan" >
+                            <input type="text" name="Jurusan" class="form-control" id="Jurusan" aria-describedby="Jurusan" >
                         </div>
-                        <div class="form-group">
-                            <label for="No_Handphone">No_Handphone</label>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="No_Handphone">No_Handphone</label>--}}
 
-                            <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" aria-describedby="No_Handphone" >
-                        </div>
+{{--                            <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" aria-describedby="No_Handphone" >--}}
+{{--                        </div>--}}
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
